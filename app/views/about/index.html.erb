@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Project Page">
+    <meta name="description" content="About Us Page">
     <meta name="author" content="Julian Smith">
-    <title><%= @project %></title>
+    <title>About Us</title>
   </head>
   <body>
     <!--Navigation Bar-->
@@ -51,45 +51,66 @@
 
     <!--Main Body-->
     <main role="main">
-      <!--Main Title-->
-      <div class="jumbotron">
-        <div class="container">
-          <h2 class="display-2"><%= @project.title %></h2>
-          <p></p>
-        </div>
-      </div>
-
-      <!--Information-->
-      <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-              <p style="font-size: 20px; line-height: 1.4"><%= @project.description %></p>
+        <!--Main Title-->
+        <div class="jumbotron">
+          <div class="container">
+            <div class="row justify-content-md-center">
+              <h1 class="display-3">About Us</h1>
+              <p></p>
             </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-4">
-            <a class="btn btn-sm btn-outline-secondary" href="/projects" role="button">Back</a>
-            <% if user_signed_in? %>
-              <a class="btn btn-sm btn-outline-secondary" href="projects/<%= @project.id %>/edit" role="button">Edit</a>
-            <% else %>
-            <% end %>
           </div>
         </div>
-        <br>
-        <br>
-      </div>
-    </main>
-
-    <!--Footer-->
+  
+        <!--Information-->
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col-md-4">
+              <h2>Purpose</h2>
+              <p>This website was created by Julian Smith for CS3300: Software Engineering at the University of Colorado Colorado Springs.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Technology</h2>
+                <p>
+                    We leveraged Ruby on Rails along with Bootstrap in order to create a cohesive website efficiently and effectively. Docker
+                    and other CI/CD tools such as Heroku and CircleCI were also used. 
+                </p>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="row justify-content-md-center">
+            <h2>
+                Future Development
+            </h2>
+          </div>
+          <div class="row justify-content-md-center">
+            <p>
+                If you are interested in contributing to this project, the below links provide easy access to all the necessary resources.
+            </p>
+          </div>
+          <div class="row justify-content-md-center">
+            <a href="https://github.com/JulesVerne22/cs3300" class="link-primary">GitHub Repo</a>
+          </div>
+          <div class="row justify-content-md-center">
+            <a href="https://app.circleci.com/pipelines/github/JulesVerne22/cs3300" class="link-primary">CircleCI Pipeline</a>
+          </div>
+          <div class="row justify-content-md-center">
+            <a href="https://juliansmith.herokuapp.com" class="link-primary">Heroku Webpage</a>
+          </div>
+          <div class="row justify-content-md-center">
+            <a href="https://app.julianinnovation.com" class="link-info">Personal Webpage</a>
+          </div>
+          <hr>
+        </div>
+      </main>
+  
+      <!--Footer-->
     <footer class="container"></footer>
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col-md-4">
-            <p>&copy; Julian Inc. 2022-Present</p>
-          </div>
-        </div>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <p>&copy; Julian Inc. 2022-Present</p>
       </div>
-    </footer>
+    </div>
+  </footer>
   </body>
 </html>

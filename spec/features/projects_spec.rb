@@ -3,9 +3,7 @@ require 'rails_helper'
 RSpec.feature "Projects", type: :feature do
   context "Create new project" do
     before(:each) do
-      visit root_path
-      click_link "Sign in"
-      click_link "Sign up"
+      visit new_user_registration_path
       fill_in "Email", with: "user@example.com"
       fill_in "Password", with: "123456"
       fill_in "Password confirmation", with: "123456"
@@ -31,9 +29,7 @@ RSpec.feature "Projects", type: :feature do
   context "Update project" do
     let(:project) { Project.create(title: "Test title", description: "Test content") }
     before(:each) do
-      visit root_path
-      click_link "Sign in"
-      click_link "Sign up"
+      visit new_user_registration_path
       fill_in "Email", with: "user@example.com"
       fill_in "Password", with: "123456"
       fill_in "Password confirmation", with: "123456"
@@ -60,9 +56,7 @@ RSpec.feature "Projects", type: :feature do
 
   context "Remove existing project" do
     before(:each) do
-      visit root_path
-      click_link "Sign in"
-      click_link "Sign up"
+      visit new_user_registration_path
       fill_in "Email", with: "user@example.com"
       fill_in "Password", with: "123456"
       fill_in "Password confirmation", with: "123456"
@@ -72,7 +66,7 @@ RSpec.feature "Projects", type: :feature do
     let!(:project) { Project.create(title: "Test title", description: "Test content") }
     scenario "remove project" do
       visit projects_path
-      click_link "Destroy"
+      click_link "Delete"
       expect(page).to have_content("Project was successfully destroyed")
       expect(Project.count).to eq(0)
     end

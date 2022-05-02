@@ -1,5 +1,99 @@
-<h1>New Project</h1>
+<p id="notice"><%= notice %></p>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="New Project Page">
+    <meta name="author" content="Julian Smith">
+    <title>New Project</title>
+  </head>
+  <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/">Portfolios</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/sign_out" data-method="Delete" data-confirm="Are you sure?">Sign-out</a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/sign_in">Sign-in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/sign_up">Sign-up</a>
+            </li>
+          <% end %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Useful Links</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="/projects">Projects</a>
+              <a class="dropdown-item" href="https://github.com/JulesVerne22/cs3300">GitHub</a>
+              <a class="dropdown-item" href="/about">About Us</a>
+            </div>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <body class="text-center">
+      <h1 class="h3 mb-3 font-weight-normal">Please create project</h1>
+      <div class="row justify-content-md-center">
+          <div class="col-md-3">
+              <div class="card mb-4 box-shadow">
+                  <br>
+                  <div class="row justify-content-md-center">
+                      <%= render 'form', project: @project %>
+                  </div>
+                  <div class="row justify-content-md-center">
+                      <div class="col-md-6">
+                          <%= link_to 'Back', projects_path %>
+                      </div>
+                  </div>
+                  <br>
+              </div>
+          </div>
+      </div>
+    </body>
+
+    <br>
+    <br>
+    <br>
+
+    <!--Footer-->
+    <footer class="container"></footer>
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-4">
+            <p>&copy; Julian Inc. 2022-Present</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
+<!-- <h1>New Project</h1>
 
 <%= render 'form', project: @project %>
 
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', projects_path %> -->
