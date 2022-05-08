@@ -15,6 +15,8 @@ SimpleCov.start 'rails' do
   add_filter '/bin/'
   add_filter '/db/'
   add_filter '/spec/'
+  add_filter '/app/helpers/'
+  add_filter '/app/controllers/application_controller.rb'
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
